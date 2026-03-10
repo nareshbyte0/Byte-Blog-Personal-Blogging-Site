@@ -1,0 +1,72 @@
+<section class="author">
+
+  <h1 class="author__heading">
+    Hi, I'm Naresh 👋
+  </h1>
+
+  <p class="author__body">
+    Backend-Focused Full-Stack Developer specializing in 
+    <strong>Node.js, Express.js, MongoDB, and modern JavaScript</strong>.
+  </p>
+
+ 
+
+ </section>
+
+
+<!-- Hero Image -->
+
+<img 
+  src="/img/hero-image.webp"
+  alt="person looking out through window"
+  class="hero-image"
+  width="981"
+  height="528"
+/>
+
+
+<!-- Blog Posts -->
+
+<section class="articles">
+
+  <h2 class="articles__heading">
+    Latest Posts
+  </h2>
+
+  <ul class="article-ul">
+
+    <% data.forEach(post => { %>
+
+      <li>
+
+        <a href="/post/<%= post._id %>">
+
+          <span>
+            <%= post.title %>
+          </span>
+
+          <span class="article-list__date">
+            <%= post.createdAt.toDateString() %>
+          </span>
+
+        </a>
+
+      </li>
+
+    <% }) %>
+
+  </ul>
+
+
+  <!-- Pagination -->
+
+  <% if (nextPage !== null) { %>
+
+    <a href="/?page=<%= nextPage %>" class="pagination">
+      ← View Older Posts
+    </a>
+
+  <% } %>
+
+
+</section>
