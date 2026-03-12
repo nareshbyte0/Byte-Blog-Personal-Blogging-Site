@@ -87,6 +87,20 @@ To access the admin dashboard:
 2. Register a new user (via the `/register` POST route if not already created) or use existing credentials.
 3. Login to manage your posts!
 
+## ☁️ Deployment to Render
+
+To deploy this project to [Render](https://render.com/):
+
+1. **Create a new Web Service**: Point it to your GitHub repository.
+2. **Environment**: Select `Node`.
+3. **Build Command**: `npm install`
+4. **Start Command**: `npm start` (or `node app.js`)
+5. **Add Environment Variables**:
+   - Go to the **Environment** tab on Render.
+   - Add `MONGODB_URI` with your connection string.
+   - Add `JWT_SECRET` with your secret key.
+   - (Optional) `PORT` will be automatically set by Render, but the app uses process.env.PORT correctly.
+
 ## 📄 License
 
 This project is licensed under the [ISC License](LICENSE).
